@@ -156,3 +156,24 @@ h3 {
 .filo p + p {
   margin-top: var(--space-4);
 }
+
+.quotes {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.quote {
+  margin: 0;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.quote p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
