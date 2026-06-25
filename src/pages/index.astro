@@ -1,17 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FiloConduttore from '../components/FiloConduttore.astro';
+import TreVolti from '../components/TreVolti.astro';
+import Contatti from '../components/Contatti.astro';
 ---
 
 <Layout>
   <main class="page">
-    <section class="hero">
-      <div class="container">
-        <p class="eyebrow">Classe 1944</p>
-        <h1>Ferdinando Balzarro</h1>
-        <p class="lead">
-          Un uomo che ha scelto di non accontentarsi della prima versione di sé.
-        </p>
-      </div>
-    </section>
+    <Hero />
+    <FiloConduttore />
+    <TreVolti />
+    <Contatti />
   </main>
 </Layout>
