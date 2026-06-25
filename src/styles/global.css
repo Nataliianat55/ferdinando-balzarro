@@ -110,11 +110,17 @@ h3 {
 }
 
 .card {
-  padding: 1.5rem;
+  padding: 1.75rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
+  min-height: 100%;
+}
+
+.card p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
 }
 
 .contact-list {
