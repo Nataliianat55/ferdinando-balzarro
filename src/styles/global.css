@@ -36,7 +36,7 @@ a {
 }
 
 .hero {
-  padding: 7rem 0 5rem;
+  padding: 8rem 0 6rem;
 }
 
 .eyebrow {
@@ -60,11 +60,12 @@ h1 {
   max-width: 42rem;
   margin-top: var(--space-5);
   font-size: 1.125rem;
+  line-height: 1.75;
   color: var(--color-text-muted);
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .narrow {
@@ -176,4 +177,16 @@ h3 {
   margin: 0;
   color: var(--color-text);
   font-size: 1.05rem;
+}
+
+.section p {
+  line-height: 1.8;
+}
+
+.section h2 {
+  margin-bottom: var(--space-6);
+}
+
+.contact-list {
+  margin-top: var(--space-6);
 }
