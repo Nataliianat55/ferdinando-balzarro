@@ -207,3 +207,46 @@ h3 {
 .section-label {
   opacity: 0.9;
 }
+
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 42rem;
+}
+
+.hero-visual {
+  display: flex;
+}
+
+.hero-placeholder {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) + 0.5rem);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,236,229,0.9));
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  }
+}
+
+@media (max-width: 899px) {
+  .hero-placeholder {
+    min-height: 280px;
+  }
+}
