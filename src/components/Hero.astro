@@ -1,13 +1,49 @@
 <section class="hero">
-  <div class="container">
-    <p class="eyebrow">Classe 1944 · Piacenza / Bologna</p>
-    <h1>Ferdinando Balzarro</h1>
-    <p class="lead">
-      Karate, scrittura, esperienza interiore.
-      Una vita attraversata da discipline diverse,
-      tenute insieme da una stessa esigenza:
-      rigore, verità, presenza.
-    </p>
-    <a class="button" href="#contatti">Scrivimi</a>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Bologna · Scrittura · Karate</p>
+      <h1>Ferdinando Balzarro</h1>
+      <p class="lead">
+        Scrittura, pratica, visione.
+        Una presenza che tiene insieme corpo,
+        linguaggio e tensione interiore.
+      </p>
+      <a class="button" href="#contatti">Contatti</a>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="/ferdinando-hero.jpg"
+        alt="Ritratto di Ferdinando Balzarro"
+        loading="eager"
+      />
+    </div>
   </div>
 </section>
+
+<style>
+  .hero-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-copy {
+    max-width: 36rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+</style>
