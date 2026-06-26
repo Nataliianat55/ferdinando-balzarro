@@ -214,3 +214,27 @@ h3 {
   margin: 0;
   color: var(--color-text-muted);
 }
+
+.karate-info {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.karate-item {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-soft);
+}
+
+.karate-item h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.35rem;
+}
+
+.karate-item p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
