@@ -135,10 +135,6 @@ h3 {
   list-style: none;
 }
 
-.contact-list li + li {
-  margin-top: var(--space-3);
-}
-
 @media (min-width: 768px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
@@ -190,10 +186,6 @@ h3 {
 
 .section h2 {
   margin-bottom: var(--space-6);
-}
-
-.contact-list {
-  margin-top: var(--space-6);
 }
 
 .card h3 {
