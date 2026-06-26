@@ -6,6 +6,9 @@
   --color-text-muted: #b3aba0;
   --color-accent: #c97a3d;
   --color-accent-strong: #e19a5f;
+  --color-accent-soft: rgba(201, 122, 61, 0.16);
+  --color-accent-glow: rgba(201, 122, 61, 0.28);
+}
   --color-border: rgba(255, 255, 255, 0.09);
 
   --font-heading: 'Cormorant Garamond', Georgia, serif;
