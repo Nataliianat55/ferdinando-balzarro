@@ -40,3 +40,27 @@
     </div>
   </div>
 </section>
+
+<style>
+  .karate-block {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .karate-image img {
+    width: 100%;
+    border-radius: 1rem;
+    display: block;
+  }
+
+  .karate-copy {
+    width: 100%;
+  }
+
+  @media (min-width: 900px) {
+    .karate-block {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+  }
+</style>
