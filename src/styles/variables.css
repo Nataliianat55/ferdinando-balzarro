@@ -1,12 +1,12 @@
 :root {
-  --color-bg: #0c0c0f;
-  --color-surface: #141419;
-  --color-surface-2: #1b1b22;
-  --color-text: #f3f1ea;
-  --color-text-muted: #a7a29a;
-  --color-accent: #ff8a3d;
-  --color-accent-strong: #ffb06a;
-  --color-border: rgba(255, 255, 255, 0.1);
+  --color-bg: #111113;
+  --color-surface: #17171b;
+  --color-surface-2: #1d1d22;
+  --color-text: #f2eee7;
+  --color-text-muted: #b3aba0;
+  --color-accent: #c97a3d;
+  --color-accent-strong: #e19a5f;
+  --color-border: rgba(255, 255, 255, 0.09);
 
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', Arial, sans-serif;
