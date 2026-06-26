@@ -148,6 +148,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .filo p {
@@ -168,16 +169,10 @@ h3 {
 .quote {
   margin: 0;
   padding: 1.5rem;
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-}
-
-.quote p {
-  margin: 0;
-  color: var(--color-text);
-  font-size: 1.05rem;
 }
 
 .section p {
@@ -194,9 +189,5 @@ h3 {
 
 .quote {
   background: rgba(255, 255, 255, 0.78);
-}
-
-.section-label {
-  opacity: 0.9;
 }
 
