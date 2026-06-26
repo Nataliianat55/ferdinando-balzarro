@@ -1,8 +1,12 @@
+---
+const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
+---
+
 <section class="section" aria-labelledby="karate-title">
   <div class="container narrow karate-block">
     <div class="karate-image">
       <img
-        src="/karate-detail.jpg"
+        src={karateImage}
         alt="Dettaglio del karate: pugno, cintura e gesto"
         loading="lazy"
       />
@@ -12,9 +16,7 @@
       <p class="section-label">Karate</p>
       <h2 id="karate-title">Il karate non addolcisce.</h2>
 
-      <p>
-        Azzera il superfluo.
-      </p>
+      <p>Azzera il superfluo.</p>
 
       <p>
         Non come esibizione, non come posa:
@@ -40,27 +42,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  .karate-block {
-    display: grid;
-    gap: 2rem;
-  }
-
-  .karate-image img {
-    width: 100%;
-    border-radius: 1rem;
-    display: block;
-  }
-
-  .karate-copy {
-    width: 100%;
-  }
-
-  @media (min-width: 900px) {
-    .karate-block {
-      grid-template-columns: 0.95fr 1.05fr;
-      align-items: start;
-    }
-  }
-</style>
