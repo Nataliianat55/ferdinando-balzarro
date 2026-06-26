@@ -250,3 +250,12 @@ h3 {
     min-height: 280px;
   }
 }
+
+.hero-figure {
+  width: 100%;
+  margin: 0;
+}
+
+.hero-figure .hero-placeholder {
+  aspect-ratio: 4 / 5;
+}
