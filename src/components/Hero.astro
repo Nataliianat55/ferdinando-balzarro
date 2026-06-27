@@ -30,7 +30,7 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: #09090b; /* Темний фон як у Libri */
+    background-color: #09090b; 
   }
 
   .hero-bg {
@@ -39,21 +39,21 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
     z-index: 0;
   }
 
-  /* Налаштування фотографії */
+  /* Налаштування фотографії - Мобільна версія */
   .hero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* На мобільному тримаємо фокус по центру і трохи вище середини, щоб очі були в кадрі */
-    object-position: center 25%; 
-    filter: brightness(0.8) contrast(1.1); /* Легка корекція для кінематографічності */
+    /* Зміщуємо фокус на самий верх, щоб зберегти очі в кадрі */
+    object-position: center 10%; 
+    filter: brightness(0.8) contrast(1.1);
   }
 
-  /* Градієнт для мобільної версії: темний знизу, прозорий зверху */
+  /* Градієнт для мобільної версії: дуже темний знизу (під текстом), прозорий зверху */
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(9, 9, 11, 1) 0%, rgba(9, 9, 11, 0.7) 40%, transparent 100%);
+    background: linear-gradient(to top, rgba(9, 9, 11, 1) 0%, rgba(9, 9, 11, 0.8) 35%, transparent 100%);
   }
 
   .container {
@@ -63,29 +63,29 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
     padding: 0 20px;
   }
 
-  /* Сітка контенту (мобільний вигляд за замовчуванням) */
+  /* Сітка контенту - Мобільна версія */
   .hero-grid {
     position: relative;
     z-index: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Текст притиснутий донизу екрана */
-    padding-bottom: 60px;
+    justify-content: flex-end; /* Притискаємо текст донизу */
+    padding-bottom: 12vh; /* Безпечний відступ від нижнього краю екрана */
     padding-top: 100px;
   }
 
   .hero-copy {
     max-width: 100%;
-    text-align: center; /* Центруємо текст на телефоні */
+    text-align: center; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центруємо кнопку */
+    align-items: center; 
   }
 
-  /* Типографіка (синхронізована з Libri) */
+  /* Типографіка */
   .eyebrow {
-    color: #C5A059; /* Бронзовий колір */
+    color: #C5A059; 
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 0.85rem;
@@ -95,11 +95,11 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
 
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3.5rem, 12vw, 5.5rem); /* Адаптивний розмір шрифту */
+    font-size: clamp(3.5rem, 12vw, 5.5rem); 
     line-height: 1.05;
     color: #ffffff;
     margin-bottom: 1.5rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Легка тінь для читабельності */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); 
   }
 
   .lead {
@@ -110,49 +110,48 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
     max-width: 32rem;
   }
 
-  /* Елегантна кнопка */
+  /* Елегантна кнопка - Зробили її залитою за замовчуванням для кращого контрасту на телефоні */
   .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 14px 36px;
-    background: transparent;
-    color: #C5A059;
+    background: #C5A059; 
+    color: #09090b;
     border: 1px solid #C5A059;
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.4s ease;
   }
 
   .button:hover {
-    background: #C5A059;
-    color: #09090b;
-    box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.4);
+    background: transparent;
+    color: #C5A059;
   }
 
   /* Налаштування для десктопу (від 900px) */
   @media (min-width: 900px) {
     .hero-grid {
-      justify-content: center; /* Вирівнюємо по вертикалі по центру */
+      justify-content: center; 
       padding-bottom: 0;
     }
 
     .hero-copy {
       max-width: 44rem;
-      text-align: left; /* Текст зліва */
-      align-items: flex-start; /* Кнопка зліва */
+      text-align: left; 
+      align-items: flex-start; 
     }
 
-    /* Зсуваємо фото трохи вправо, щоб обличчя не перекривалося текстом */
+    /* На десктопі повертаємо фокус вправо */
     .hero-bg img {
       object-position: 70% center; 
     }
 
-    /* Градієнт для десктопу: темний зліва (під текстом), прозорий справа (над обличчям) */
+    /* Десктопний градієнт: темний зліва, прозорий справа */
     .hero-overlay {
       background: linear-gradient(90deg, #09090b 0%, rgba(9, 9, 11, 0.85) 45%, transparent 100%);
     }
