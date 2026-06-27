@@ -117,6 +117,42 @@
     .book-card-featured {
       grid-column: span 2; 
     }
+
+/* Новий стиль для картки з обкладинкою */
+.book-flex {
+  display: flex;
+  flex-direction: row; /* Зображення зліва, текст справа */
+  align-items: center;
+  gap: 20px;
+}
+
+.book-image-wrapper {
+  flex-shrink: 0;
+  width: 100px; /* Ширина обкладинки */
+  height: 140px; /* Висота */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Ефект при наведенні */
+.book-card:hover .book-cover {
+  transform: scale(1.05);
+}
+
+/* На мобільних екранах перемикаємо на колонку, якщо потрібно */
+@media (max-width: 600px) {
+  .book-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
   }
 
   /* Дизайн самої картки */
