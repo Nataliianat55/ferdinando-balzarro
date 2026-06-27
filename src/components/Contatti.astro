@@ -1,29 +1,205 @@
-<section id="contatti" class="section" aria-labelledby="contatti-title">
+---
+// Секція Contatti
+---
+
+<section id="contatti" class="section contatti-section" aria-labelledby="contatti-title">
   <div class="container narrow">
-    <p class="section-label">Contatti</p>
-    <h2 id="contatti-title">Per libri, incontri, dialoghi</h2>
+    <div class="contatti-header reveal-item">
+      <p class="section-label">Contatti</p>
+      <h2 id="contatti-title" class="contatti-title">Per libri, incontri, dialoghi</h2>
+      <p class="contatti-body">
+        Bologna. Per contatti diretti, libri, pratica e conversazioni.
+      </p>
+    </div>
 
-    <p>
-      Bologna. Per contatti diretti, libri, pratica e conversazioni.
-    </p>
-
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:balzarro.nando@gmail.com">balzarro.nando@gmail.com</a></li>
-      <li>Facebook: <a href="https://www.facebook.com/share/1DuhTeJWbM/" target="_blank" rel="noopener noreferrer">Pagina Facebook</a></li>
-      <li>Città di riferimento: Bologna</li>
-      <li class="phone-row">
-        <button type="button" class="button button-phone" aria-expanded="false" aria-controls="phone-value">
+    <ul class="contact-list reveal-item">
+      <li class="contact-item">
+        <span class="contact-key">Email</span>
+        <a class="contact-link" href="mailto:balzarro.nando@gmail.com">balzarro.nando@gmail.com</a>
+      </li>
+      
+      <li class="contact-item">
+        <span class="contact-key">Facebook</span>
+        <a class="contact-link" href="https://www.facebook.com/share/1DuhTeJWbM/" target="_blank" rel="noopener noreferrer">Pagina Ufficiale</a>
+      </li>
+      
+      <li class="contact-item">
+        <span class="contact-key">Città di riferimento</span>
+        <span class="contact-value">Bologna</span>
+      </li>
+      
+      <li class="contact-item phone-row">
+        <button type="button" class="button-outline" aria-expanded="false" aria-controls="phone-value" id="phone-btn">
           Mostra numero
         </button>
-        <span id="phone-value" hidden>368 536 411</span>
+        <span id="phone-value" class="phone-value" hidden>368 536 411</span>
       </li>
     </ul>
   </div>
 </section>
 
+<style>
+  /* Базові налаштування секції */
+  .contatti-section {
+    padding: 100px 20px 140px;
+    background-color: #09090b;
+    color: #e4e4e7;
+  }
+
+  .container.narrow {
+    max-width: 700px; /* Трохи вужчий контейнер для елегантності списку */
+    margin: 0 auto;
+  }
+
+  .contatti-header {
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+  .section-label {
+    color: #C5A059;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .contatti-title {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+  }
+
+  .contatti-body {
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Дизайн списку контактів */
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(63, 63, 70, 0.4); /* Тонка лінія-розділювач */
+  }
+
+  .contact-item:first-child {
+    border-top: 1px solid rgba(63, 63, 70, 0.4);
+  }
+
+  .contact-key {
+    color: #71717a;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .contact-link, .contact-value {
+    color: #f4f4f5;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .contact-link:hover {
+    color: #C5A059;
+  }
+
+  /* Рядок з телефоном */
+  .phone-row {
+    align-items: flex-start;
+  }
+
+  .button-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background: transparent;
+    color: #C5A059;
+    border: 1px solid #C5A059;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .button-outline:hover {
+    background: #C5A059;
+    color: #09090b;
+  }
+
+  .phone-value {
+    font-size: 1.3rem;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .phone-value[hidden] {
+    display: none;
+  }
+
+  /* Анімації появи */
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-item:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  /* Адаптив для десктопу: ярлик зліва, значення справа */
+  @media (min-width: 600px) {
+    .contact-item {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .phone-row {
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
 <script>
-  const phoneButton = document.querySelector('.button-phone');
-  const phoneValue = document.querySelector('#phone-value');
+  // Логіка для кнопки телефона
+  const phoneButton = document.getElementById('phone-btn');
+  const phoneValue = document.getElementById('phone-value');
 
   if (phoneButton && phoneValue) {
     phoneButton.addEventListener('click', () => {
@@ -40,18 +216,24 @@
       }
     });
   }
+
+  // Скрипт для анімації появи при скролі
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: '0px 0px -10% 0px'
+    }
+  );
+
+  document.querySelectorAll('.reveal-item').forEach((item) => {
+    observer.observe(item);
+  });
 </script>
-
-<style>
-  .phone-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  #phone-value {
-    font-weight: 600;
-    letter-spacing: 0.04em;
-  }
-</style>
