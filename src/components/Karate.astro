@@ -2,7 +2,7 @@
 const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
 ---
 
-<section class="section karate-section reveal" aria-labelledby="karate-title">
+<section class="section karate-section" aria-labelledby="karate-title">
   <div class="container narrow karate-block">
     <div class="karate-image reveal-item">
       <img
@@ -10,6 +10,7 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
         alt="Dettaglio del karate: pugno, cintura e gesto"
         loading="lazy"
       />
+      <div class="image-overlay"></div>
     </div>
 
     <div class="karate-copy reveal-item">
@@ -49,103 +50,144 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
 </section>
 
 <style>
+  /* Базові налаштування секції */
   .karate-section {
     position: relative;
+    padding: 100px 20px;
+    background-color: #09090b; /* Той самий чорно-сірий фон */
+    color: #e4e4e7;
+    overflow: hidden;
+  }
+
+  .container.narrow {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .karate-block {
     display: grid;
-    gap: 2rem;
-    align-items: start;
+    gap: 3rem;
+    align-items: center;
   }
 
+  /* Зображення */
   .karate-image {
     position: relative;
+    border-radius: 16px;
+    overflow: hidden;
   }
 
   .karate-image img {
     width: 100%;
     display: block;
-    border-radius: 1.25rem;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(1) brightness(0.95) contrast(1.04);
-    box-shadow: var(--shadow-soft);
+    /* Легке знебарвлення та затемнення для кінематографічності */
+    filter: grayscale(0.6) brightness(0.8) contrast(1.1); 
+    transition: filter 0.5s ease;
   }
 
+  .karate-image:hover img {
+    filter: grayscale(0.2) brightness(0.9) contrast(1.1); /* Трохи "оживає" при наведенні */
+  }
+
+  /* Легкий градієнт поверх фото для більшої глибини */
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(9, 9, 11, 0.4), transparent);
+    pointer-events: none;
+  }
+
+  /* Текстовий блок */
   .karate-copy {
     width: 100%;
     max-width: 36rem;
   }
 
+  .section-label {
+    color: #C5A059; /* Бронзовий акцент */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
   .karate-title {
-    margin: 0 0 0.9rem;
-    color: var(--color-text);
-    font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 7vw, 4.25rem);
-    line-height: 0.96;
-    letter-spacing: -0.02em;
+    margin: 0 0 0.5rem;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
     text-wrap: balance;
   }
 
   .karate-accent {
-    margin: 0 0 1rem;
-    color: var(--color-text);
-    font-family: var(--font-body);
-    font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+    margin: 0 0 1.5rem;
+    color: #C5A059;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-style: italic; /* Додає літературності та ваги цитаті */
     line-height: 1.35;
-    font-weight: 500;
   }
 
   .karate-body {
     margin: 0;
-    max-width: 31ch;
-    color: var(--color-text-muted);
-    font-size: 0.98rem;
-    line-height: 1.75;
+    max-width: 35ch;
+    color: #a1a1aa;
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 
+  /* Картки інформації (Стиль синхронізовано з Libri) */
   .karate-info {
-    margin-top: 2rem;
+    margin-top: 3rem;
     display: grid;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .karate-item {
-    padding: 1.35rem 1.35rem 1.4rem;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.02) 0%,
-      rgba(255, 255, 255, 0.01) 100%
-    );
-    border: 1px solid var(--color-border);
-    border-radius: 1.25rem;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+    padding: 24px;
+    background-color: rgba(39, 39, 42, 0.4);
+    border: 1px solid rgba(63, 63, 70, 0.5);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+  }
+
+  .karate-item:hover {
+    background-color: rgba(39, 39, 42, 0.8);
+    border-color: rgba(197, 160, 89, 0.4); /* Бронзова рамка */
+    transform: translateY(-4px); /* Легке підняття */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   }
 
   .karate-item h3 {
     margin: 0 0 0.8rem;
-    color: var(--color-text);
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: #f4f4f5;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
+
+  .karate-item:hover h3 {
+    color: #C5A059; /* Заголовок стає бронзовим при наведенні */
   }
 
   .karate-item p {
     margin: 0;
-    color: var(--color-text-muted);
-    font-size: 0.98rem;
-    line-height: 1.7;
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
+  /* Анімації появи */
   .reveal-item {
     opacity: 0;
-    transform: translateY(28px);
-    transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .reveal-item.is-visible {
@@ -154,56 +196,38 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
   }
 
   .reveal-item:nth-child(2) {
-    transition-delay: 0.08s;
+    transition-delay: 0.15s;
   }
 
+  /* Десктоп */
   @media (min-width: 900px) {
     .karate-block {
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      gap: 3.25rem;
-      align-items: start;
-    }
-
-    .karate-image {
-      padding-top: 0.25rem;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4rem;
     }
 
     .karate-info {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    .karate-item {
-      min-height: 100%;
+    
+    /* Остання картка займає всю ширину на десктопі, щоб сітка була рівною */
+    .karate-item:nth-child(3) {
+      grid-column: span 2;
     }
   }
 
+  /* Мобільний */
   @media (max-width: 899px) {
-    .karate-block {
-      gap: 1.5rem;
+    .karate-section {
+      padding: 60px 20px;
     }
 
     .karate-image img {
-      aspect-ratio: 4 / 2.6;
-      border-radius: 1.2rem;
+      aspect-ratio: 4 / 3;
     }
 
     .karate-title {
-      max-width: 9ch;
-      margin-bottom: 0.8rem;
-    }
-
-    .karate-accent {
-      margin-bottom: 0.95rem;
-    }
-
-    .karate-body {
-      max-width: 30ch;
-      font-size: 0.97rem;
-    }
-
-    .karate-info {
-      margin-top: 1.75rem;
+      max-width: 10ch;
     }
   }
 
@@ -217,6 +241,7 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
 </style>
 
 <script>
+  // Скрипт для кінематографічної анімації появи елементів під час скролу
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -227,8 +252,8 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
       });
     },
     {
-      threshold: 0.18,
-      rootMargin: '0px 0px -8% 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -10% 0px'
     }
   );
 
