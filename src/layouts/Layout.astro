@@ -11,6 +11,25 @@ const {
   title = "Ferdinando Balzarro — Scrittura, pratica, visione",
   description = "Sito ufficiale di Ferdinando Balzarro. Karate, scrittura, presenza, ricerca interiore. Bologna."
 } = Astro.props;
+
+// Це наш JSON-LD для ШІ та Google
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ferdinando Balzarro",
+  "jobTitle": ["Scrittore", "Maestro di Karate"],
+  "url": "https://ferdinandobalzarro.it/",
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bologna",
+    "addressCountry": "IT"
+  },
+  "email": "balzarro.nando@gmail.com",
+  "sameAs": [
+    "https://www.facebook.com/share/1DuhTeJWbM/"
+  ]
+};
 ---
 
 <!doctype html>
@@ -18,26 +37,37 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO та ідентифікація -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#111111" />
+    <link rel="canonical" href="https://ferdinandobalzarro.it/" />
+    <meta name="theme-color" content="#09090b" />
 
+    <!-- Open Graph (Facebook, WhatsApp тощо) -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ferdinandobalzarro.it/" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:site_name" content="Ferdinando Balzarro" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
+    <!-- Шрифти -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Використовуємо Playfair Display для заголовків, як ми домовилися -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- JSON-LD для Google/AI -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
     <slot />
