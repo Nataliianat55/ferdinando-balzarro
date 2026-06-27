@@ -1,18 +1,25 @@
 :root {
-  --color-bg: #111113;
-  --color-surface: #17171b;
-  --color-surface-2: #1d1d22;
-  --color-text: #f2eee7;
-  --color-text-muted: #b3aba0;
-  --color-accent: #c97a3d;
-  --color-accent-strong: #e19a5f;
-  --color-accent-soft: rgba(201, 122, 61, 0.16);
-  --color-accent-glow: rgba(201, 122, 61, 0.28);
-  --color-border: rgba(255, 255, 255, 0.09);
+  /* Базові кольори: наш фірмовий глибокий фон */
+  --color-bg: #09090b;
+  --color-surface: #141416;
+  --color-surface-2: #1c1c1f;
+  
+  --color-text: #ffffff;
+  --color-text-muted: #a1a1aa;
 
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', Arial, sans-serif;
+  /* Наша фірмова бронза */
+  --color-accent: #C5A059;
+  --color-accent-strong: #d4af37;
+  --color-accent-soft: rgba(197, 160, 89, 0.16);
+  --color-accent-glow: rgba(197, 160, 89, 0.28);
+  
+  --color-border: rgba(197, 160, 89, 0.2);
 
+  /* Типографіка: змінено на Playfair для заголовків */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Контейнер та відступи */
   --container-width: 76rem;
   --container-padding: 1.5rem;
 
@@ -28,5 +35,5 @@
   --space-10: 8rem;
 
   --radius: 1.25rem;
-  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
