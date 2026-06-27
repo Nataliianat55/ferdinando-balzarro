@@ -2,9 +2,9 @@
 const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
 ---
 
-<section class="section" aria-labelledby="karate-title">
+<section class="section karate-section reveal" aria-labelledby="karate-title">
   <div class="container narrow karate-block">
-    <div class="karate-image">
+    <div class="karate-image reveal-item">
       <img
         src={karateImage}
         alt="Dettaglio del karate: pugno, cintura e gesto"
@@ -12,15 +12,20 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
       />
     </div>
 
-    <div class="karate-copy">
+    <div class="karate-copy reveal-item">
       <p class="section-label">Karate</p>
-      <h2 id="karate-title">Il karate non addolcisce.</h2>
 
-      <p>Azzera il superfluo.</p>
+      <h2 id="karate-title" class="karate-title">
+        Il karate non addolcisce.
+      </h2>
 
-      <p>
-        Non come esibizione, non come posa:
-        il gesto come rigore, controllo e presenza.
+      <p class="karate-accent">
+        Azzera il superfluo.
+      </p>
+
+      <p class="karate-body">
+        Non come esibizione, non come posa: il gesto come rigore,
+        controllo e presenza.
       </p>
 
       <div class="karate-info">
@@ -44,25 +49,190 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
 </section>
 
 <style>
+  .karate-section {
+    position: relative;
+  }
+
   .karate-block {
     display: grid;
     gap: 2rem;
+    align-items: start;
+  }
+
+  .karate-image {
+    position: relative;
   }
 
   .karate-image img {
     width: 100%;
-    border-radius: 1rem;
     display: block;
+    border-radius: 1.25rem;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(1) brightness(0.95) contrast(1.04);
+    box-shadow: var(--shadow-soft);
   }
 
   .karate-copy {
     width: 100%;
+    max-width: 36rem;
+  }
+
+  .karate-title {
+    margin: 0 0 0.9rem;
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 7vw, 4.25rem);
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .karate-accent {
+    margin: 0 0 1rem;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+    line-height: 1.35;
+    font-weight: 500;
+  }
+
+  .karate-body {
+    margin: 0;
+    max-width: 31ch;
+    color: var(--color-text-muted);
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .karate-info {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .karate-item {
+    padding: 1.35rem 1.35rem 1.4rem;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  }
+
+  .karate-item h3 {
+    margin: 0 0 0.8rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .karate-item p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-item:nth-child(2) {
+    transition-delay: 0.08s;
   }
 
   @media (min-width: 900px) {
     .karate-block {
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 3.25rem;
       align-items: start;
+    }
+
+    .karate-image {
+      padding-top: 0.25rem;
+    }
+
+    .karate-info {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .karate-item {
+      min-height: 100%;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .karate-block {
+      gap: 1.5rem;
+    }
+
+    .karate-image img {
+      aspect-ratio: 4 / 2.6;
+      border-radius: 1.2rem;
+    }
+
+    .karate-title {
+      max-width: 9ch;
+      margin-bottom: 0.8rem;
+    }
+
+    .karate-accent {
+      margin-bottom: 0.95rem;
+    }
+
+    .karate-body {
+      max-width: 30ch;
+      font-size: 0.97rem;
+    }
+
+    .karate-info {
+      margin-top: 1.75rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
   }
 </style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px'
+    }
+  );
+
+  document.querySelectorAll('.reveal-item').forEach((item) => {
+    observer.observe(item);
+  });
+</script>
