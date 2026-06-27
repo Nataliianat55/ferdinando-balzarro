@@ -1,27 +1,173 @@
-<section class="section" aria-labelledby="libri-title">
+---
+// Сюди можна додавати імпорти або пропси в майбутньому
+---
+
+<section class="section libri-section" aria-labelledby="libri-title">
   <div class="container narrow">
     <p class="section-label">Scrittura</p>
-    <h2 id="libri-title">Libri</h2>
+    <h2 id="libri-title" class="section-title">Libri</h2>
 
-    <p>
+    <p class="section-subtitle">
       Testi nati da esperienza, attrito, ricerca.
     </p>
 
     <div class="book-list">
-      <article class="book-item">
-        <h3><a href="https://www.amazon.it/Lamore-indecente-Ferdinando-Balzarro/dp/B0FZNPK53R/" target="_blank" rel="noopener noreferrer">L’amore indecente</a></h3>
-        <p>Pathos, tensione, contraddizione.</p>
-      </article>
+      <!-- Картка 1 -->
+      <a href="https://www.amazon.it/Lamore-indecente-Ferdinando-Balzarro/dp/B0FZNPK53R/" target="_blank" rel="noopener noreferrer" class="book-card">
+        <div class="book-content">
+          <h3 class="book-title">L’amore indecente</h3>
+          <p class="book-desc">Pathos, tensione, contraddizione.</p>
+        </div>
+        <div class="book-action">
+          <span>Scopri di più</span>
+          <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+      </a>
 
-      <article class="book-item">
-        <h3><a href="https://www.amazon.it/Vendetta-infinita-Ferdinando-Balzarro/dp/B0CSMBBY2Y/" target="_blank" rel="noopener noreferrer">Vendetta infinita</a></h3>
-        <p>Romanzo recente dell’autore.</p>
-      </article>
+      <!-- Картка 2 -->
+      <a href="https://www.amazon.it/Vendetta-infinita-Ferdinando-Balzarro/dp/B0CSMBBY2Y/" target="_blank" rel="noopener noreferrer" class="book-card">
+        <div class="book-content">
+          <h3 class="book-title">Vendetta infinita</h3>
+          <p class="book-desc">Romanzo recente dell’autore.</p>
+        </div>
+        <div class="book-action">
+          <span>Scopri di più</span>
+          <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+      </a>
 
-      <article class="book-item">
-        <h3><a href="https://www.amazon.it/bene-male-Pensieri-maestro/dp/8895687442/" target="_blank" rel="noopener noreferrer">Tra bene e male. Pensieri di un maestro</a></h3>
-        <p>Pensiero, etica, esperienza.</p>
-      </article>
+      <!-- Картка 3 -->
+      <a href="https://www.amazon.it/bene-male-Pensieri-maestro/dp/8895687442/" target="_blank" rel="noopener noreferrer" class="book-card book-card-featured">
+        <div class="book-content">
+          <h3 class="book-title">Tra bene e male. Pensieri di un maestro</h3>
+          <p class="book-desc">Pensiero, etica, esperienza.</p>
+        </div>
+        <div class="book-action">
+          <span>Scopri di più</span>
+          <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  /* Базові налаштування секції */
+  .libri-section {
+    padding: 80px 20px;
+    background-color: #09090b; 
+    color: #e4e4e7;
+  }
+
+  .container.narrow {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    color: #C5A059; /* Твоя "стара бронза" */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif; /* Якщо у тебе підключений інший шрифт, зміни назву тут */
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: #a1a1aa;
+    margin-bottom: 40px;
+  }
+
+  /* Сітка карток */
+  .book-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .book-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .book-card-featured {
+      grid-column: span 2; 
+    }
+  }
+
+  /* Дизайн самої картки */
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgba(39, 39, 42, 0.4); 
+    border: 1px solid rgba(63, 63, 70, 0.5); 
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ефекти при наведенні (Hover) */
+  .book-card:hover {
+    background-color: rgba(39, 39, 42, 0.8);
+    border-color: rgba(197, 160, 89, 0.4); 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #f4f4f5;
+    margin: 0 0 10px 0;
+    transition: color 0.3s ease;
+  }
+
+  .book-card:hover .book-title {
+    color: #C5A059;
+  }
+
+  .book-desc {
+    color: #a1a1aa;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Блок з посиланням та стрілкою */
+  .book-action {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    color: #71717a;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .book-card:hover .book-action {
+    color: #C5A059;
+  }
+
+  .arrow-icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .book-card:hover .arrow-icon {
+    transform: translateX(5px);
+  }
+</style>
