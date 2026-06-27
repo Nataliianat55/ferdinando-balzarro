@@ -1,7 +1,3 @@
----
-// Сюди можна додавати імпорти або пропси в майбутньому
----
-
 <section class="section libri-section" aria-labelledby="libri-title">
   <div class="container narrow">
     <p class="section-label">Scrittura</p>
@@ -13,7 +9,7 @@
 
     <div class="book-list">
       
-<!-- Книга 1 -->
+      <!-- Книга 1 -->
       <a href="https://www.amazon.it/Lamore-indecente-Ferdinando-Balzarro/dp/B0FZNPK53R/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper">
@@ -51,11 +47,15 @@
           </div>
         </div>
       </a>
+
+    </div> <!-- Закриваємо book-list -->
+  </div> <!-- Закриваємо container -->
 </section>
 
 <style>
   .libri-section { padding: 80px 20px; background-color: #09090b; color: #e4e4e7; }
   .container.narrow { max-width: 800px; margin: 0 auto; }
+  
   .section-label { color: #C5A059; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; }
   .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; color: #ffffff; }
   .section-subtitle { font-size: 1.1rem; color: #a1a1aa; margin-bottom: 40px; }
@@ -70,7 +70,8 @@
   .book-card:hover { background-color: rgba(39, 39, 42, 0.8); border-color: rgba(197, 160, 89, 0.4); transform: translateY(-5px); }
 
   .book-flex { display: flex; align-items: center; gap: 20px; }
-  .book-image-wrapper { flex-shrink: 0; width: 90px; height: 120px; border-radius: 4px; overflow: hidden; }
+  
+  .book-image-wrapper { flex-shrink: 0; width: 100px; height: 140px; border-radius: 4px; overflow: hidden; }
   .book-cover { width: 100%; height: 100%; object-fit: cover; }
   
   .book-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #f4f4f5; margin: 0 0 5px 0; }
@@ -78,162 +79,5 @@
 
   @media (max-width: 600px) {
     .book-flex { flex-direction: column; text-align: center; }
-  }
-</style>
-
-<style>
-  /* Базові налаштування секції */
-  .libri-section {
-    padding: 80px 20px;
-    background-color: #09090b; 
-    color: #e4e4e7;
-  }
-
-  .container.narrow {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    color: #C5A059; /* Твоя "стара бронза" */
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif; /* Якщо у тебе підключений інший шрифт, зміни назву тут */
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: #ffffff;
-  }
-
-  .section-subtitle {
-    font-size: 1.1rem;
-    color: #a1a1aa;
-    margin-bottom: 40px;
-  }
-
-  /* Сітка карток */
-  .book-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  @media (min-width: 768px) {
-    .book-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .book-card-featured {
-      grid-column: span 2; 
-    }
-
-/* Новий стиль для картки з обкладинкою */
-.book-flex {
-  display: flex;
-  flex-direction: row; /* Зображення зліва, текст справа */
-  align-items: center;
-  gap: 20px;
-}
-
-.book-image-wrapper {
-  flex-shrink: 0;
-  width: 100px; /* Ширина обкладинки */
-  height: 140px; /* Висота */
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.book-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-/* Ефект при наведенні */
-.book-card:hover .book-cover {
-  transform: scale(1.05);
-}
-
-/* На мобільних екранах перемикаємо на колонку, якщо потрібно */
-@media (max-width: 600px) {
-  .book-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-  }
-
-  /* Дизайн самої картки */
-  .book-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-    background-color: rgba(39, 39, 42, 0.4); 
-    border: 1px solid rgba(63, 63, 70, 0.5); 
-    border-radius: 16px;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Ефекти при наведенні (Hover) */
-  .book-card:hover {
-    background-color: rgba(39, 39, 42, 0.8);
-    border-color: rgba(197, 160, 89, 0.4); 
-    transform: translateY(-5px); 
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  }
-
-  .book-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #f4f4f5;
-    margin: 0 0 10px 0;
-    transition: color 0.3s ease;
-  }
-
-  .book-card:hover .book-title {
-    color: #C5A059;
-  }
-
-  .book-desc {
-    color: #a1a1aa;
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  /* Блок з посиланням та стрілкою */
-  .book-action {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    color: #71717a;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .book-card:hover .book-action {
-    color: #C5A059;
-  }
-
-  .arrow-icon {
-    width: 18px;
-    height: 18px;
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-  }
-
-  .book-card:hover .arrow-icon {
-    transform: translateX(5px);
   }
 </style>
