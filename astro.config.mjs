@@ -1,9 +1,10 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://nataliianat55.github.io',
-  base: '/ferdinando-balzarro',
+  site: 'https://ferdinandobalzarro.it',
   output: 'static',
-  build: { assets: 'assets' },
+  build: {
+    assets: 'assets'
+  },
   trailingSlash: 'always'
 });
