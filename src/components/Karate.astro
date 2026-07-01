@@ -58,6 +58,50 @@
   </div>
 </section>
 
+<section class="events-section" aria-labelledby="events-title">
+  <div class="container narrow events-block">
+    <h2 id="events-title" class="events-title">Prossimi Stage</h2>
+    
+    <div class="events-grid">
+      <article class="event-card reveal-item">
+        <img src="/1000027999.jpg" alt="Stage di Karate a Rimini, 11 luglio" loading="lazy" />
+      </article>
+      
+      <article class="event-card reveal-item">
+        <img src="/1000027998.jpg" alt="Stage di Karate a Cesenatico, 30 agosto" loading="lazy" />
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-section { padding: 80px 20px; background-color: #09090b; }
+  .events-title { 
+    text-align: center; 
+    color: #ffffff; 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(2rem, 5vw, 3rem); 
+    margin-bottom: 3rem; 
+  }
+  .events-grid { 
+    display: grid; 
+    gap: 2rem; 
+    grid-template-columns: 1fr; 
+  }
+  .event-card img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 12px; 
+    border: 1px solid rgba(63, 63, 70, 0.5);
+    transition: transform 0.3s ease;
+  }
+  .event-card img:hover { transform: scale(1.02); }
+
+  @media (min-width: 768px) {
+    .events-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
 <style>
   .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
   .container.narrow { max-width: 1200px; margin: 0 auto; }
