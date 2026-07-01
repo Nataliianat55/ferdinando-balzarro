@@ -1,9 +1,5 @@
 ---
-import karateImage from '<img
-  src="/karate-detail.jpg" 
-  alt="Dettaglio del karate: pugno, cintura e gesto"
-  loading="lazy"
-/>
+import karateImage from '../assets/karate-detail.jpg';
 ---
 
 <section class="section karate-section" aria-labelledby="karate-title">
@@ -76,6 +72,7 @@ import karateImage from '<img
   .stage-item { border-color: #C5A059; }
   .reveal-item { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
   .reveal-item.is-visible { opacity: 1; transform: translateY(0); }
+
   @media (min-width: 900px) {
     .karate-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
     .karate-info { grid-template-columns: repeat(2, 1fr); }
@@ -92,5 +89,6 @@ import karateImage from '<img
       }
     });
   }, { threshold: 0.15 });
+
   document.querySelectorAll('.reveal-item').forEach((item) => observer.observe(item));
 </script>
