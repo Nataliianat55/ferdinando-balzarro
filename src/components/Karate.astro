@@ -1,6 +1,4 @@
----
 const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
----
 
 <section class="section karate-section" aria-labelledby="karate-title">
   <div class="container narrow karate-block">
@@ -28,6 +26,12 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
        Non come esibizione, non come posa: rigore del gesto, controllo di sé, rispetto dell'altro.
       </p>
 
+      <!-- Оголошення про щотижневі заняття -->
+      <div class="annuncio-box">
+        <h3>Prossimi appuntamenti</h3>
+        <p>Da settembre in poi, ogni domenica a Bologna presso lo <strong>Sport Village</strong> in via S. Donato, ci saranno stage di approfondimento su vari temi inerenti al karate.</p>
+      </div>
+
       <div class="karate-info">
         <article class="karate-item">
           <h3>Pratica</h3>
@@ -38,225 +42,53 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
           <h3>Misura</h3>
           <p>Forza trattenuta, attenzione vigile, rispetto del limite.</p>
         </article>
+      </div>
 
-        <article class="karate-item">
-          <h3>Città</h3>
-          <p>Bologna</p>
-        </article>
+      <!-- Блок з подіями (плакати) -->
+      <div class="eventi-grid">
+        <img src={`${import.meta.env.BASE_URL}1000027999.jpg`} alt="Stage Rimini 11 Luglio" class="event-img" />
+        <img src={`${import.meta.env.BASE_URL}1000027998.jpg`} alt="Stage Cesenatico 30 Agosto" class="event-img" />
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  /* Базові налаштування секції */
-  .karate-section {
-    position: relative;
-    padding: 100px 20px;
-    background-color: #09090b; /* Той самий чорно-сірий фон */
-    color: #e4e4e7;
-    overflow: hidden;
-  }
+  .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
+  .container.narrow { max-width: 1200px; margin: 0 auto; }
+  .karate-block { display: grid; gap: 3rem; align-items: start; }
+  
+  /* Фото */
+  .karate-image { position: relative; border-radius: 16px; overflow: hidden; }
+  .karate-image img { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; filter: grayscale(0.6) brightness(0.8); }
 
-  .container.narrow {
-    max-width: 1200px;
-    margin: 0 auto;
+  /* Оголошення */
+  .annuncio-box { 
+    margin: 2rem 0; padding: 20px; 
+    background: rgba(197, 160, 89, 0.1); 
+    border-left: 4px solid #C5A059;
+    border-radius: 4px;
   }
+  .annuncio-box h3 { margin: 0 0 0.5rem; color: #C5A059; font-family: 'Playfair Display', serif; }
+  .annuncio-box p { font-size: 0.95rem; line-height: 1.5; color: #d4d4d8; }
 
-  .karate-block {
-    display: grid;
-    gap: 3rem;
-    align-items: center;
-  }
+  /* Текст */
+  .karate-copy { width: 100%; max-width: 36rem; }
+  .section-label { color: #C5A059; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
+  .karate-title { margin: 0 0 0.5rem; color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; }
+  .karate-accent { margin: 0 0 1.5rem; color: #C5A059; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; }
+  .karate-body { color: #a1a1aa; line-height: 1.6; }
 
-  /* Зображення */
-  .karate-image {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-  }
+  /* Сітка для подій */
+  .eventi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 2rem; }
+  .event-img { width: 100%; border-radius: 8px; border: 1px solid #3f3f46; transition: transform 0.3s ease; }
+  .event-img:hover { transform: scale(1.02); }
 
-  .karate-image img {
-    width: 100%;
-    display: block;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    object-position: center;
-    /* Легке знебарвлення та затемнення для кінематографічності */
-    filter: grayscale(0.6) brightness(0.8) contrast(1.1); 
-    transition: filter 0.5s ease;
-  }
-
-  .karate-image:hover img {
-    filter: grayscale(0.2) brightness(0.9) contrast(1.1); /* Трохи "оживає" при наведенні */
-  }
-
-  /* Легкий градієнт поверх фото для більшої глибини */
-  .image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(9, 9, 11, 0.4), transparent);
-    pointer-events: none;
-  }
-
-  /* Текстовий блок */
-  .karate-copy {
-    width: 100%;
-    max-width: 36rem;
-  }
-
-  .section-label {
-    color: #C5A059; /* Бронзовий акцент */
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-
-  .karate-title {
-    margin: 0 0 0.5rem;
-    color: #ffffff;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    line-height: 1.05;
-    text-wrap: balance;
-  }
-
-  .karate-accent {
-    margin: 0 0 1.5rem;
-    color: #C5A059;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-    font-style: italic; /* Додає літературності та ваги цитаті */
-    line-height: 1.35;
-  }
-
-  .karate-body {
-    margin: 0;
-    max-width: 35ch;
-    color: #a1a1aa;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  /* Картки інформації (Стиль синхронізовано з Libri) */
-  .karate-info {
-    margin-top: 3rem;
-    display: grid;
-    gap: 1.2rem;
-  }
-
-  .karate-item {
-    padding: 24px;
-    background-color: rgba(39, 39, 42, 0.4);
-    border: 1px solid rgba(63, 63, 70, 0.5);
-    border-radius: 12px;
-    transition: all 0.4s ease;
-  }
-
-  .karate-item:hover {
-    background-color: rgba(39, 39, 42, 0.8);
-    border-color: rgba(197, 160, 89, 0.4); /* Бронзова рамка */
-    transform: translateY(-4px); /* Легке підняття */
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  }
-
-  .karate-item h3 {
-    margin: 0 0 0.8rem;
-    color: #f4f4f5;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.05em;
-    transition: color 0.3s ease;
-  }
-
-  .karate-item:hover h3 {
-    color: #C5A059; /* Заголовок стає бронзовим при наведенні */
-  }
-
-  .karate-item p {
-    margin: 0;
-    color: #a1a1aa;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  /* Анімації появи */
-  .reveal-item {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .reveal-item.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .reveal-item:nth-child(2) {
-    transition-delay: 0.15s;
-  }
-
-  /* Десктоп */
+  /* Адаптив */
   @media (min-width: 900px) {
-    .karate-block {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 4rem;
-    }
-
-    .karate-info {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    
-    /* Остання картка займає всю ширину на десктопі, щоб сітка була рівною */
-    .karate-item:nth-child(3) {
-      grid-column: span 2;
-    }
+    .karate-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
   }
-
-  /* Мобільний */
   @media (max-width: 899px) {
-    .karate-section {
-      padding: 60px 20px;
-    }
-
-    .karate-image img {
-      aspect-ratio: 4 / 3;
-    }
-
-    .karate-title {
-      max-width: 10ch;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal-item {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
+    .eventi-grid { grid-template-columns: 1fr; }
   }
 </style>
-
-<script>
-  // Скрипт для кінематографічної анімації появи елементів під час скролу
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.15,
-      rootMargin: '0px 0px -10% 0px'
-    }
-  );
-
-  document.querySelectorAll('.reveal-item').forEach((item) => {
-    observer.observe(item);
-  });
-</script>
