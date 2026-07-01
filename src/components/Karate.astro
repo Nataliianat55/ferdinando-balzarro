@@ -1,98 +1,25 @@
-const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
+---
+import karateImage from '../assets/karate-detail.jpg';
+---
 
-<section class="section karate-section" aria-labelledby="karate-title">
-  <div class="container narrow karate-block">
-    <div class="karate-image reveal-item">
-      <img
-        src={karateImage}
-        alt="Dettaglio del karate: pugno, cintura e gesto"
-        loading="lazy"
-      />
-      <div class="image-overlay"></div>
-    </div>
-
-    <div class="karate-copy reveal-item">
-      <p class="section-label">Karate</p>
-
-      <h2 id="karate-title" class="karate-title">
-        Il karate non addolcisce.
-      </h2>
-
-      <h2 class="karate-accent">
-        Azzera il superfluo.
-      </h2>
-
-      <p class="karate-body">
-       Non come esibizione, non come posa: rigore del gesto, controllo di sé, rispetto dell'altro.
-      </p>
-
-      <!-- Оголошення про щотижневі заняття -->
-      <div class="annuncio-box">
-        <h3>Prossimi appuntamenti</h3>
-        <p>Da settembre in poi, ogni domenica a Bologna presso lo <strong>Sport Village</strong> in via S. Donato, ci saranno stage di approfondimento su vari temi inerenti al karate.</p>
-      </div>
-
-      <div class="karate-info">
-        <article class="karate-item">
-          <h3>Pratica</h3>
-          <p>Disciplina del corpo, precisione del gesto, responsabilità interiore.</p>
-        </article>
-
-        <article class="karate-item">
-          <h3>Misura</h3>
-          <p>Forza trattenuta, attenzione vigile, rispetto del limite.</p>
-        </article>
-      </div>
-
-      <!-- Блок з подіями (плакати) -->
-      <div class="eventi-grid">
-        <img src={`${import.meta.env.BASE_URL}1000027999.jpg`} alt="Stage Rimini 11 Luglio" class="event-img" />
-        <img src={`${import.meta.env.BASE_URL}1000027998.jpg`} alt="Stage Cesenatico 30 Agosto" class="event-img" />
-      </div>
-    </div>
+<section class="karate-section">
+  <img src={karateImage.src} alt="Ferdinando Balzarro - Karate" />
+  <div class="content">
+    <h2>Karate</h2>
+    <p>Тут має бути текст про карате, якщо він у тебе є.</p>
   </div>
 </section>
 
 <style>
-  .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
-  .container.narrow { max-width: 1200px; margin: 0 auto; }
-  .karate-block { display: grid; gap: 3rem; align-items: start; }
+  .karate-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
   
-  /* Фото */
-  .karate-image { position: relative; border-radius: 16px; overflow: hidden; }
-  .karate-image img { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; filter: grayscale(0.6) brightness(0.8); }
-
----
-import karateImage from '../assets/karate-detail.jpg'; // Переконайся, що шлях до картинки правильний
----
-
-  /* Оголошення */
-  .annuncio-box { 
-    margin: 2rem 0; padding: 20px; 
-    background: rgba(197, 160, 89, 0.1); 
-    border-left: 4px solid #C5A059;
-    border-radius: 4px;
-  }
-  .annuncio-box h3 { margin: 0 0 0.5rem; color: #C5A059; font-family: 'Playfair Display', serif; }
-  .annuncio-box p { font-size: 0.95rem; line-height: 1.5; color: #d4d4d8; }
-
-  /* Текст */
-  .karate-copy { width: 100%; max-width: 36rem; }
-  .section-label { color: #C5A059; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
-  .karate-title { margin: 0 0 0.5rem; color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; }
-  .karate-accent { margin: 0 0 1.5rem; color: #C5A059; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; }
-  .karate-body { color: #a1a1aa; line-height: 1.6; }
-
-  /* Сітка для подій */
-  .eventi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 2rem; }
-  .event-img { width: 100%; border-radius: 8px; border: 1px solid #3f3f46; transition: transform 0.3s ease; }
-  .event-img:hover { transform: scale(1.02); }
-
-  /* Адаптив */
-  @media (min-width: 900px) {
-    .karate-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
-  }
-  @media (max-width: 899px) {
-    .eventi-grid { grid-template-columns: 1fr; }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 </style>
