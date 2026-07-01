@@ -62,6 +62,10 @@ const karateImage = `${import.meta.env.BASE_URL}karate-detail.jpg`;
   .karate-image { position: relative; border-radius: 16px; overflow: hidden; }
   .karate-image img { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; filter: grayscale(0.6) brightness(0.8); }
 
+---
+import karateImage from '../assets/karate-detail.jpg'; // Переконайся, що шлях до картинки правильний
+---
+
   /* Оголошення */
   .annuncio-box { 
     margin: 2rem 0; padding: 20px; 
