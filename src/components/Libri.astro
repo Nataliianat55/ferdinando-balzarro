@@ -1,3 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import imgGiocodelleparti from '../assets/IlgiocodellepartiCop.jpg';
+import imgAmore from '../assets/amore.jpg';
+import imgVendetta from '../assets/vendetta.jpg';
+import imgBene from '../assets/bene.jpg';
+---
+
 <section class="section libri-section" aria-labelledby="libri-title">
   <div class="container narrow">
     <p class="section-label">Scrittura</p>
@@ -13,7 +21,7 @@
       <a href="https://www.edizionimontag.it/catalogo/il-gioco-delle-parti/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper">
-            <img src="/IlgiocodellepartiCop.jpg" alt="Il gioco delle parti" class="book-cover" />
+            <Image src={imgGiocodelleparti} alt="Il gioco delle parti" width={300} height={450} class="book-cover" />
           </div>
           <div class="book-content">
             <h3 class="book-title">Il gioco delle parti</h3>
@@ -26,11 +34,11 @@
       <a href="https://www.amazon.it/Lamore-indecente-Ferdinando-Balzarro/dp/B0FZNPK53R/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper">
-            <img src="/amore.jpg" alt="L'amore indecente" class="book-cover" />
+            <Image src={imgAmore} alt="L'amore indecente" width={300} height={450} class="book-cover" />
           </div>
           <div class="book-content">
             <h3 class="book-title">L’amore indecente</h3>
-            <p class="book-desc">Pathos, tensione, contraddizione. Un intreccio passionale che esplora i confini dell'animo umano.</p>
+            <p class="book-desc">Pathos, tensione, contraddizione. Un intreccio passionale що esplora i confini dell'animo umano.</p>
           </div>
         </div>
       </a>
@@ -39,7 +47,7 @@
       <a href="https://www.amazon.it/Vendetta-infinita-Ferdinando-Balzarro/dp/B0CSMBBY2Y/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper">
-            <img src="/vendetta.jpg" alt="Vendetta infinita" class="book-cover" />
+            <Image src={imgVendetta} alt="Vendetta infinita" width={300} height={450} class="book-cover" />
           </div>
           <div class="book-content">
             <h3 class="book-title">Vendetta infinita</h3>
@@ -52,7 +60,7 @@
       <a href="https://www.amazon.it/bene-male-Pensieri-maestro/dp/8895687442/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper">
-            <img src="/bene.jpg" alt="Il bene... il male" class="book-cover" />
+            <Image src={imgBene} alt="Il bene... il male" width={300} height={450} class="book-cover" />
           </div>
           <div class="book-content">
             <h3 class="book-title">Tra bene e male</h3>
