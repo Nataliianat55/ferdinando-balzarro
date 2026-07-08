@@ -132,3 +132,22 @@ h2 {
   width: 100%;
   height: 100%;
 }
+
+/* Щоб картки книг не злипалися */
+.book-card {
+  margin-bottom: 40px; /* Відстань між книгами */
+  padding: 30px;
+}
+
+/* Обмежуємо розмір обкладинок для всіх книг */
+.book-image-wrapper {
+  width: 120px !important; /* Фіксована ширина для всіх */
+  height: 170px !important; /* Фіксована висота */
+  flex-shrink: 0;
+  margin: 0 auto 15px; /* Центруємо, якщо треба */
+}
+
+/* Налаштування для відео, щоб не було завеликим */
+.video-wrapper {
+  max-width: 100%;
+}
