@@ -1,14 +1,19 @@
-​Ferdinando Balzarro - Portfolio Digitale Ufficiale
-​Questo è il portfolio digitale ufficiale di Ferdinando Balzarro. Il sito presenta l'autore, che unisce la creatività letteraria alla filosofia e alla pratica del Karate.
-​Temi Chiave
-​Letteratura: Esplorazione dell'animo umano, tensione e contraddizione nei romanzi.
-​Karate: Disciplina, controllo, precisione del gesto e responsabilità interiore.
-​Filosofia: Progetto che studia l'etica e i confini dell'esperienza umana.
-​Libri e Pubblicazioni
-​Il gioco delle parti: Un'analisi acuta delle maschere sociali e della ricerca di verità nel quotidiano.
-​L’amore indecente: Pathos, tensione e contraddizioni.
-​Vendetta infinita: Quando il passato ritorna con la forza di una tempesta marziale.
-​Tra bene e male: Riflessioni etiche ed esperienza del Maestro.
-​Contatti e Navigazione
-​Pagina Principale
-​Contatti: Email balzarro.nando@gmail.com, Pagina ufficiale Facebook.
+# Ferdinando Balzarro - Portfolio Digitale Ufficiale
+
+Questo è il portfolio digitale ufficiale di Ferdinando Balzarro. Il sito presenta l'autore, che unisce la creatività letteraria alla filosofia e alla pratica del Karate.
+
+## Temi Chiave
+*   **Letteratura:** Esplorazione dell'animo umano, tensione e contraddizione nei romanzi.
+*   **Karate:** Disciplina, controllo, precisione del gesto e responsabilità interiore.
+*   **Filosofia:** Progetto che studia l'etica e i confini dell'esperienza umana.
+
+## Libri e Pubblicazioni
+*   **Il gioco delle parti:** Un'analisi acuta delle maschere sociali e della ricerca di verità nel quotidiano.
+*   **L’amore indecente:** Pathos, tensione e contraddizioni.
+*   **Vendetta infinita:** Quando il passato ritorna con la forza di una tempesta marziale.
+*   **Tra bene e male:** Riflessioni etiche ed esperienza del Maestro.
+
+## Contatti e Navigazione
+*   [Pagina Principale](https://ferdinandobalzarro.it/)
+*   **Email:** balzarro.nando@gmail.com
+*   [Pagina ufficiale Facebook](https://www.facebook.com/share/1DuhTeJWbM/)
