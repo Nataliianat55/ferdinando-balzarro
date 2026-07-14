@@ -1,10 +1,20 @@
 ---
-const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
+import { Image } from 'astro:assets';
+import heroImage from '../assets/ferdinando-hero.jpg'; // Переконайтеся, що шлях правильний
 ---
 
 <section class="hero hero--cinematic">
   <div class="hero-bg">
-    <img src={heroImage} alt="Ferdinando Balzarro" aria-hidden="true" loading="eager" />
+    <Image 
+      src={heroImage} 
+      alt="Ferdinando Balzarro" 
+      width={1200} 
+      height={800}
+      format="webp"
+      loading="eager" 
+      fetchpriority="high"
+      class="hero-img"
+    />
     <div class="hero-overlay"></div>
   </div>
 
@@ -21,7 +31,6 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
 </section>
 
 <style>
-  /* Головний контейнер */
   .hero {
     position: relative;
     width: 100%;
@@ -29,144 +38,49 @@ const heroImage = `${import.meta.env.BASE_URL}ferdinando-hero.jpg`;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: #09090b; /* Темний фон, куди плавно перейде зображення */
+    background-color: #09090b;
   }
 
-  /* 
-   * СТРУКТУРНА МАГІЯ ДЛЯ МОБІЛЬНИХ: 
-   * Обмежуємо висоту фотографії (60vh), щоб прибрати сильний зум.
-   */
   .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 60vh; /* Фото займає лише верхні 60% екрана */
+    height: 60vh;
     z-index: 0;
   }
 
-  .hero-bg img {
+  /* Тепер ми стилізуємо клас .hero-img, який генерує компонент Image */
+  .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top; /* Фокус на обличчі */
+    object-position: center top;
     filter: brightness(0.9) contrast(1.1);
   }
 
-  /* Градієнт, який робить плавний перехід від фотографії (зверху) до чорного фону (знизу) */
   .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(9, 9, 11, 0) 50%, #09090b 100%);
   }
 
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+  /* ... решта ваших стилів (container, hero-grid, h1, button тощо) залишаються без змін ... */
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .hero-grid { position: relative; z-index: 1; width: 100%; padding-top: 50vh; padding-bottom: 40px; display: flex; justify-content: center; }
+  .hero-copy { max-width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .eyebrow { color: #C5A059; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 11vw, 5.5rem); line-height: 1.05; color: #ffffff; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); }
+  .lead { color: #e4e4e7; font-size: 1.05rem; line-height: 1.5; margin-bottom: 2rem; max-width: 32rem; }
+  .button { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; background: #C5A059; color: #09090b; border: 1px solid #C5A059; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.4s ease; }
+  .button:hover { background: transparent; color: #C5A059; }
 
-  /* Сітка контенту - Мобільна версія */
-  .hero-grid {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding-top: 50vh; /* Відступаємо зверху, щоб текст опустився під обличчя */
-    padding-bottom: 40px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-copy {
-    max-width: 100%;
-    text-align: center; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-  }
-
-  /* Типографіка */
-  .eyebrow {
-    color: #C5A059; 
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 11vw, 5.5rem); /* Трохи зменшили для кращого вигляду на телефоні */
-    line-height: 1.05;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); 
-  }
-
-  .lead {
-    color: #e4e4e7;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    max-width: 32rem;
-  }
-
-  /* Кнопка */
-  .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 36px;
-    background: #C5A059; 
-    color: #09090b;
-    border: 1px solid #C5A059;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.4s ease;
-  }
-
-  .button:hover {
-    background: transparent;
-    color: #C5A059;
-  }
-
-  /* 
-   * НАЛАШТУВАННЯ ДЛЯ ДЕСКТОПУ (від 900px)
-   * Повертаємо повноцінний повноекранний вигляд
-   */
   @media (min-width: 900px) {
-    .hero {
-      align-items: center;
-    }
-
-    .hero-bg {
-      height: 100%; /* Повертаємо фотографію на всю висоту екрана */
-    }
-
-    .hero-bg img {
-      object-position: 70% center; 
-    }
-
-    /* Десктопний градієнт: темний зліва, прозорий справа */
-    .hero-overlay {
-      background: linear-gradient(90deg, #09090b 0%, rgba(9, 9, 11, 0.85) 45%, transparent 100%);
-    }
-
-    .hero-grid {
-      padding-top: 0; /* Скидаємо мобільний відступ */
-      justify-content: flex-start; /* Текст зліва */
-    }
-
-    .hero-copy {
-      max-width: 44rem;
-      text-align: left; 
-      align-items: flex-start; 
-    }
+    .hero { align-items: center; }
+    .hero-bg { height: 100%; }
+    .hero-img { object-position: 70% center; }
+    .hero-overlay { background: linear-gradient(90deg, #09090b 0%, rgba(9, 9, 11, 0.85) 45%, transparent 100%); }
+    .hero-grid { padding-top: 0; justify-content: flex-start; }
+    .hero-copy { max-width: 44rem; text-align: left; align-items: flex-start; }
   }
 </style>
