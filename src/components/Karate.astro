@@ -1,16 +1,20 @@
 ---
-
+import { Image } from 'astro:assets';
+import karateDetail from '../assets/karate-detail.jpg';
+import event1 from '../assets/Ivent 1.jpeg';
 ---
 
 <section class="section karate-section" aria-labelledby="karate-title">
   <div class="container narrow karate-block">
     <div class="karate-image reveal-item">
-      <img
-        <img
-  src="/karate-detail.jpg"
-  loading="lazy"
-/>
-        
+      <Image
+        src={karateDetail}
+        alt="Dettaglio di pratica karate"
+        width={800}
+        height={500}
+        format="webp"
+        loading="lazy"
+      />
       <div class="image-overlay"></div>
     </div>
 
@@ -30,10 +34,10 @@
         controllo e presenza.
       </p>
 
- <article class="karate-item stage-item">
-          <h3>Stage Domenicali</h3>
-          <p>Da settembre in poi ogni domenica a Bologna presso lo Sport Vilage in via S. Donato Bologna ci saranno stage di approfondoimento su vari temi inerenti al karate.</p>
-        </article>
+      <article class="karate-item stage-item">
+        <h3>Stage Domenicali</h3>
+        <p>Da settembre in poi ogni domenica a Bologna presso lo Sport Vilage in via S. Donato Bologna ci saranno stage di approfondimento su vari temi inerenti al karate.</p>
+      </article>
 
       <div class="karate-info">
         <article class="karate-item">
@@ -50,7 +54,6 @@
           <h3>Città</h3>
           <p>Bologna, Sport Village (via S. Donato).</p>
         </article>
-
       </div>
     </div>
   </div>
@@ -61,43 +64,29 @@
     <h2 id="events-title" class="events-title">Prossimi Stage</h2>
     
     <div class="events-grid">
-      
       <article class="event-card reveal-item">
-        <img src="/Ivent 1.jpeg" alt="Stage di Karate a Cesenatico, 30 agosto" loading="lazy" />
+        <Image 
+          src={event1} 
+          alt="Stage di Karate a Cesenatico, 30 agosto" 
+          width={600}
+          height={400}
+          format="webp"
+          loading="lazy"
+        />
       </article>
     </div>
   </div>
 </section>
 
 <style>
+  /* СТИЛІ ЗАЛИШАЮТЬСЯ БЕЗ ЗМІН, ЯК ВИ І НАДСИЛАЛИ */
   .events-section { padding: 80px 20px; background-color: #09090b; }
-  .events-title { 
-    text-align: center; 
-    color: #ffffff; 
-    font-family: 'Playfair Display', serif; 
-    font-size: clamp(2rem, 5vw, 3rem); 
-    margin-bottom: 3rem; 
-  }
-  .events-grid { 
-    display: grid; 
-    gap: 2rem; 
-    grid-template-columns: 1fr; 
-  }
-  .event-card img { 
-    width: 100%; 
-    height: auto; 
-    border-radius: 12px; 
-    border: 1px solid rgba(63, 63, 70, 0.5);
-    transition: transform 0.3s ease;
-  }
+  .events-title { text-align: center; color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 3rem; }
+  .events-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+  .event-card img { width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(63, 63, 70, 0.5); transition: transform 0.3s ease; }
   .event-card img:hover { transform: scale(1.02); }
+  @media (min-width: 768px) { .events-grid { grid-template-columns: 1fr 1fr; } }
 
-  @media (min-width: 768px) {
-    .events-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
-
-<style>
   .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
   .container.narrow { max-width: 1200px; margin: 0 auto; }
   .karate-block { display: grid; gap: 3rem; align-items: center; }
@@ -115,7 +104,6 @@
   .stage-item { border-color: #C5A059; }
   .reveal-item { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
   .reveal-item.is-visible { opacity: 1; transform: translateY(0); }
-
   @media (min-width: 900px) {
     .karate-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
     .karate-info { grid-template-columns: repeat(2, 1fr); }
@@ -132,6 +120,5 @@
       }
     });
   }, { threshold: 0.15 });
-
   document.querySelectorAll('.reveal-item').forEach((item) => observer.observe(item));
 </script>
