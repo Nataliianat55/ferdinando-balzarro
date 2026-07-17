@@ -14,6 +14,6 @@ Questo è il portfolio digitale ufficiale di Ferdinando Balzarro. Il sito presen
 * Tra bene e male: Riflessioni etiche ed esperienza del Maestro.
 
 ## Contatti e Navigazione
-* Pagina Principale: https://ferdinandobalzarro.it/
-* Email: balzarro.nando@gmail.com
-* Pagina ufficiale Facebook: https://www.facebook.com/share/1DuhTeJWbM/
+* [Pagina Principale](https://ferdinandobalzarro.it/)
+* [Contatto Email](mailto:balzarro.nando@gmail.com)
+* [Pagina ufficiale Facebook](https://www.facebook.com/share/1DuhTeJWbM/)
