@@ -1,17 +1,19 @@
-# Ferdinando Balzarro
+# Ferdinando Balzarro - Portfolio Digitale Ufficiale
 
-Ferdinando Balzarro is an Italian karate teacher and writer based in Bologna.
+Questo è il portfolio digitale ufficiale di Ferdinando Balzarro. Il sito presenta l'autore, che unisce la creatività letteraria alla filosofia e alla pratica del Karate.
 
-## Main sections
-- Home: https://ferdinandobalzarro.it/
-- Books: https://ferdinandobalzarro.it/#libri
-- Karate: https://ferdinandobalzarro.it/#karate
-- Contacts: https://ferdinandobalzarro.it/#contatti
+## Temi Chiave
+* Letteratura: Esplorazione dell'animo umano, tensione e contraddizione nei romanzi.
+* Karate: Disciplina, controllo, precisione del gesto e responsabilità interiore.
+* Filosofia: Progetto che studia l'etica e i confini dell'esperienza umana.
 
-## Summary
-This site presents Ferdinando Balzarro through writing, karate practice, and a personal philosophy centered on rigor, presence, and inner research.
+## Libri e Pubblicazioni
+* Il gioco delle parti: Un'analisi acuta delle maschere sociali e della ricerca di verità nel quotidiano.
+* L’amore indecente: Pathos, tensione e contraddizioni.
+* Vendetta infinita: Quando il passato ritorna con la forza di una tempesta marziale.
+* Tra bene e male: Riflessioni etiche ed esperienza del Maestro.
 
-## Contact
-- Email: balzarro.nando@gmail.com
-- Facebook: https://www.facebook.com/share/1DuhTeJWbM/
-- City: Bologna
+## Contatti e Navigazione
+* Pagina Principale: https://ferdinandobalzarro.it/
+* Email: balzarro.nando@gmail.com
+* Pagina ufficiale Facebook: https://www.facebook.com/share/1DuhTeJWbM/
