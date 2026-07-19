@@ -1,12 +1,3 @@
----
-import { Image } from 'astro:assets';
-// ВАЖЛИВО: Назви мають бути один в один як у папці assets
-import imgGioco from '../assets/IlgiocodellepartiCop.jpg';
-import imgAmore from '../assets/amore.jpg';
-import imgVendetta from '../assets/vendetta.jpg';
-import imgBene from '../assets/bene.jpg';
----
-
 <section class="section libri-section" aria-labelledby="libri-title">
   <div class="container narrow">
     <p class="section-label">Scrittura</p>
@@ -18,9 +9,7 @@ import imgBene from '../assets/bene.jpg';
       <!-- Книга 1 -->
       <a href="https://www.edizionimontag.it/catalogo/il-gioco-delle-parti/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
-          <div class="book-image-wrapper">
-            <Image src={imgGioco} alt="Il gioco delle parti" width={120} height={170} format="webp" />
-          </div>
+          <div class="book-image-wrapper"><img src="/IlgiocodellepartiCop.jpg" alt="Il gioco delle parti" class="book-cover" /></div>
           <div class="book-content">
             <h3 class="book-title">Il gioco delle parti</h3>
             <p class="book-desc">Un'analisi acuta delle maschere sociali e della ricerca di verità nel quotidiano.</p>
@@ -31,9 +20,7 @@ import imgBene from '../assets/bene.jpg';
       <!-- Книга 2 -->
       <a href="https://www.amazon.it/Lamore-indecente-Ferdinando-Balzarro/dp/B0FZNPK53R/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
-          <div class="book-image-wrapper">
-            <Image src={imgAmore} alt="L'amore indecente" width={120} height={170} format="webp" />
-          </div>
+          <div class="book-image-wrapper"><img src="/amore.jpg" alt="L'amore indecente" class="book-cover" /></div>
           <div class="book-content">
             <h3 class="book-title">L’amore indecente</h3>
             <p class="book-desc">Pathos, tensione, contraddizione. Un intreccio passionale che esplora i confini dell'animo umano.</p>
@@ -41,36 +28,26 @@ import imgBene from '../assets/bene.jpg';
         </div>
       </a>
 
-      <!-- Книга 3 (Vendetta infinita + Відео) -->
+      <!-- Книга 3 (Vendetta infinita) -->
       <div class="book-card-with-video">
         <a href="https://www.amazon.it/Vendetta-infinita-Ferdinando-Balzarro/dp/B0CSMBBY2Y/" target="_blank" rel="noopener noreferrer" class="book-card">
           <div class="book-flex">
-            <div class="book-image-wrapper">
-              <Image src={imgVendetta} alt="Vendetta infinita" width={120} height={170} format="webp" />
-            </div>
+            <div class="book-image-wrapper"><img src="/vendetta.jpg" alt="Vendetta infinita" class="book-cover" /></div>
             <div class="book-content">
               <h3 class="book-title">Vendetta infinita</h3>
-              <p class="book-desc">Quando il passato ritorna con la forza di una tempesta marziale.</p>
+              <p class="book-desc">Romanzo recente. Quando il passato ritorna con la forza di una tempesta marziale.</p>
             </div>
           </div>
         </a>
-        
-        <!-- Оптимізована відео-заглушка -->
         <div class="video-wrapper">
-          <button 
-            onclick="this.outerHTML = '<iframe width=\'100%\' height=\'100%\' src=\'https://www.youtube.com/embed/aruXw3Ktlk4\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'"
-            class="video-preview-btn">
-            <span>▶ Play Video</span>
-          </button>
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/aruXw3Ktlk4" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
 
       <!-- Книга 4 -->
       <a href="https://www.amazon.it/bene-male-Pensieri-maestro/dp/8895687442/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
-          <div class="book-image-wrapper">
-            <Image src={imgBene} alt="Il bene... il male" width={120} height={170} format="webp" />
-          </div>
+          <div class="book-image-wrapper"><img src="/bene.jpg" alt="Il bene... il male" class="book-cover" /></div>
           <div class="book-content">
             <h3 class="book-title">Tra bene e male</h3>
             <p class="book-desc">Pensiero, etica, esperienza. Un’esplorazione profonda attraverso gli occhi del Maestro.</p>
@@ -90,19 +67,16 @@ import imgBene from '../assets/bene.jpg';
   .book-card:hover { transform: translateY(-5px); border-color: #C5A059; }
 
   .book-flex { display: flex; gap: 20px; align-items: center; }
-  .book-image-wrapper { width: 120px; flex-shrink: 0; }
+  .book-image-wrapper { width: 100px; flex-shrink: 0; }
+  .book-cover { width: 100%; height: auto; border-radius: 4px; display: block; }
   .book-title { margin: 0 0 10px; font-family: 'Playfair Display', serif; color: #fff; }
   .book-desc { margin: 0; color: #a1a1aa; font-size: 0.95rem; }
 
+  /* Спеціальний стиль для книги з відео */
   .book-card-with-video { display: grid; gap: 15px; }
-  .video-wrapper { border-radius: 8px; overflow: hidden; border: 1px solid rgba(63, 63, 70, 0.5); height: 200px; }
+  .video-wrapper { border-radius: 8px; overflow: hidden; border: 1px solid rgba(63, 63, 70, 0.5); }
   
-  .video-preview-btn {
-    width: 100%; height: 100%; background: #27272a; border: none;
-    color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
+  @media (min-width: 768px) {
+    .book-list { grid-template-columns: 1fr 1fr; }
   }
-  .video-preview-btn:hover { background: #3f3f46; }
-  
-  @media (min-width: 768px) { .book-list { grid-template-columns: 1fr 1fr; } }
 </style>
