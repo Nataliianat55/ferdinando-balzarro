@@ -6,7 +6,7 @@
 
     <div class="book-list">
 
-      <!-- Книга U -->
+      <!-- Книга 1 -->
       <a href="https://www.edizionimontag.it/catalogo/il-gioco-delle-parti/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper"><img src="/IlgiocodellepartiCop.jpg" alt="Il gioco delle parti" class="book-cover" /></div>
@@ -17,7 +17,7 @@
         </div>
       </a>
 
-      <!-- Книга 1 -->
+      <!-- Книга 2 -->
       <a href="https://www.amazon.it/Lamore-indecente-Ferdinando-Balzarro/dp/B0FZNPK53R/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper"><img src="/amore.jpg" alt="L'amore indecente" class="book-cover" /></div>
@@ -28,30 +28,23 @@
         </div>
       </a>
 
-      <!-- Книга Vendetta infinita -->
-<a href="https://www.amazon.it/Vendetta-infinita-Ferdinando-Balzarro/dp/B0CSMBBY2Y/" target="_blank" rel="noopener noreferrer" class="book-card">
-  <div class="book-flex" style="flex-direction: column; align-items: center;">
-    
-    <!-- 1. Назва -->
-    <h3 class="book-title" style="margin-bottom: 15px;">Vendetta infinita</h3>
-    
-    <!-- 2. Відео -->
-    <div class="video-wrapper" style="width: 100%; margin-bottom: 15px; border-radius: 8px; overflow: hidden;">
-      <iframe width="100%" height="200" src="https://www.youtube.com/embed/aruXw3Ktlk4" frameborder="0" allowfullscreen></iframe>
-    </div>
-    
-    <!-- 3. Опис -->
-    <p class="book-desc" style="text-align: center; margin-bottom: 15px;">Romanzo recente. Quando il passato ritorna con la forza di una tempesta marziale.</p>
-    
-    <!-- 4. Обкладинка -->
-    <div class="book-image-wrapper" style="width: 150px; height: 210px;">
-      <img src="/vendetta.jpg" alt="Vendetta infinita" class="book-cover" />
-    </div>
-    
-  </div>
-</a>
+      <!-- Книга 3 (Vendetta infinita) -->
+      <div class="book-card-with-video">
+        <a href="https://www.amazon.it/Vendetta-infinita-Ferdinando-Balzarro/dp/B0CSMBBY2Y/" target="_blank" rel="noopener noreferrer" class="book-card">
+          <div class="book-flex">
+            <div class="book-image-wrapper"><img src="/vendetta.jpg" alt="Vendetta infinita" class="book-cover" /></div>
+            <div class="book-content">
+              <h3 class="book-title">Vendetta infinita</h3>
+              <p class="book-desc">Romanzo recente. Quando il passato ritorna con la forza di una tempesta marziale.</p>
+            </div>
+          </div>
+        </a>
+        <div class="video-wrapper">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/aruXw3Ktlk4" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
 
-      <!-- Книга 3 -->
+      <!-- Книга 4 -->
       <a href="https://www.amazon.it/bene-male-Pensieri-maestro/dp/8895687442/" target="_blank" rel="noopener noreferrer" class="book-card">
         <div class="book-flex">
           <div class="book-image-wrapper"><img src="/bene.jpg" alt="Il bene... il male" class="book-cover" /></div>
@@ -65,3 +58,25 @@
     </div>
   </div>
 </section>
+
+<style>
+  .libri-section { padding: 80px 20px; }
+  .book-list { display: grid; gap: 2rem; margin-top: 2rem; }
+  
+  .book-card { display: block; padding: 20px; background: rgba(39, 39, 42, 0.4); border: 1px solid rgba(63, 63, 70, 0.5); border-radius: 12px; transition: transform 0.3s ease; text-decoration: none; color: inherit; }
+  .book-card:hover { transform: translateY(-5px); border-color: #C5A059; }
+
+  .book-flex { display: flex; gap: 20px; align-items: center; }
+  .book-image-wrapper { width: 100px; flex-shrink: 0; }
+  .book-cover { width: 100%; height: auto; border-radius: 4px; display: block; }
+  .book-title { margin: 0 0 10px; font-family: 'Playfair Display', serif; color: #fff; }
+  .book-desc { margin: 0; color: #a1a1aa; font-size: 0.95rem; }
+
+  /* Спеціальний стиль для книги з відео */
+  .book-card-with-video { display: grid; gap: 15px; }
+  .video-wrapper { border-radius: 8px; overflow: hidden; border: 1px solid rgba(63, 63, 70, 0.5); }
+  
+  @media (min-width: 768px) {
+    .book-list { grid-template-columns: 1fr 1fr; }
+  }
+</style>
