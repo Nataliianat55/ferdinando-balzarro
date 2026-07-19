@@ -58,21 +58,28 @@ import event3 from '../assets/Ivent 3.jpeg';
     
     <div class="events-grid">
       <article class="event-card reveal-item">
-        <Image src={event1} alt="Stage di Karate" width={600} height={800} format="webp" loading="lazy" />
+        <a href={event1.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event1} alt="Stage di Karate" width={600} height={800} format="webp" loading="lazy" />
+        </a>
       </article>
 
       <article class="event-card reveal-item">
-        <Image src={event2} alt="PIU' SU C'E' SOLO IL CIELO" width={600} height={800} format="webp" loading="lazy" />
+        <a href={event2.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event2} alt="PIU' SU C'E' SOLO IL CIELO" width={600} height={800} format="webp" loading="lazy" />
+        </a>
       </article>
 
       <article class="event-card reveal-item">
-        <Image src={event3} alt="SHOTOKAN" width={600} height={800} format="webp" loading="lazy" />
+        <a href={event3.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event3} alt="SHOTOKAN" width={600} height={800} format="webp" loading="lazy" />
+        </a>
       </article>
     </div>
   </div>
 </section>
 
 <style>
+  /* Секція подій */
   .events-section { padding: 80px 20px; background-color: #09090b; }
   .events-title { text-align: center; color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 3rem; }
   
@@ -80,18 +87,18 @@ import event3 from '../assets/Ivent 3.jpeg';
   @media (min-width: 768px) { .events-grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1024px) { .events-grid { grid-template-columns: repeat(3, 1fr); } }
 
+  .event-card a { display: block; cursor: zoom-in; }
   .event-card img { 
+    display: block;
     width: 100%; 
     height: auto; 
-    object-fit: contain; 
     border-radius: 12px; 
     border: 1px solid rgba(63, 63, 70, 0.5); 
-    transition: transform 0.3s ease; 
-    display: block;
-    background-color: #09090b;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
   }
-  .event-card img:hover { transform: scale(1.02); }
+  .event-card a:hover img { transform: scale(1.02); opacity: 0.8; }
 
+  /* Секція Karate (залишена без змін) */
   .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
   .container.narrow { max-width: 1200px; margin: 0 auto; }
   .karate-block { display: grid; gap: 3rem; align-items: center; }
