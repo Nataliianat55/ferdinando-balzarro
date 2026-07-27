@@ -59,23 +59,6 @@ import heroImage from '../assets/ferdinando-hero-_1_.webp'; // Перекона�
     filter: brightness(0.9) contrast(1.1);
   }
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(9, 9, 11, 0) 50%, #09090b 100%);
-  }
-
-<Image 
-  src={heroImage} 
-  alt="Ferdinando Balzarro" 
-  width={1200} 
-  height={800}
-  sizes="(max-width: 900px) 100vw, 1200px" 
-  format="webp"
-  loading="eager" 
-  fetchpriority="high"
-  class="hero-img"
-/>
 
   /* ... решта ваших стилів (container, hero-grid, h1, button тощо) залишаються без змін ... */
   .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
