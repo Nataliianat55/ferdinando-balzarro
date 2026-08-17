@@ -75,6 +75,12 @@ import event4 from '../assets/Ivent 4.jpeg';
           <Image src={event3} alt="SHOTOKAN" width={600} height={800} format="webp" loading="lazy" />
         </a>
       </article>
+
+      <article class="event-card reveal-item">
+        <a href={event4.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event4} alt="Event 4" width={600} height={800} format="webp" loading="lazy" />
+        </a>
+      </article>
     </div>
   </div>
 </section>
@@ -84,9 +90,12 @@ import event4 from '../assets/Ivent 4.jpeg';
   .events-section { padding: 80px 20px; background-color: #09090b; }
   .events-title { text-align: center; color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 3rem; }
   
-  .events-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
-  @media (min-width: 768px) { .events-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .events-grid { grid-template-columns: repeat(3, 1fr); } }
+  /* Автоматична адаптивна сітка */
+  .events-grid { 
+    display: grid; 
+    gap: 2rem; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  }
 
   .event-card a { display: block; cursor: zoom-in; }
   .event-card img { 
@@ -99,7 +108,7 @@ import event4 from '../assets/Ivent 4.jpeg';
   }
   .event-card a:hover img { transform: scale(1.02); opacity: 0.8; }
 
-  /* Секція Karate (залишена без змін) */
+  /* Секція Karate */
   .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
   .container.narrow { max-width: 1200px; margin: 0 auto; }
   .karate-block { display: grid; gap: 3rem; align-items: center; }
@@ -115,8 +124,11 @@ import event4 from '../assets/Ivent 4.jpeg';
   .karate-item { padding: 24px; background-color: rgba(39, 39, 42, 0.4); border: 1px solid rgba(63, 63, 70, 0.5); border-radius: 12px; }
   .karate-item h3 { margin: 0 0 0.8rem; color: #f4f4f5; font-family: 'Playfair Display', serif; font-size: 1.25rem; }
   .stage-item { border-color: #C5A059; }
+  
+  /* Анімація появи */
   .reveal-item { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
   .reveal-item.is-visible { opacity: 1; transform: translateY(0); }
+  
   @media (min-width: 900px) {
     .karate-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
     .karate-info { grid-template-columns: repeat(2, 1fr); }
