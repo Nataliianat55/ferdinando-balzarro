@@ -5,6 +5,8 @@ import event1 from '../assets/Ivent 1.jpeg';
 import event2 from '../assets/Ivent 2.jpeg';
 import event3 from '../assets/Ivent 3.jpeg';
 import event4 from '../assets/Ivent 4.jpeg';
+import event5 from '../assets/Ivent 5.jpeg';
+import event6 from '../assets/Ivent 6.jpeg';
 ---
 
 <section class="section karate-section" aria-labelledby="karate-title">
@@ -81,6 +83,18 @@ import event4 from '../assets/Ivent 4.jpeg';
           <Image src={event4} alt="Event 4" width={600} height={800} format="webp" loading="lazy" />
         </a>
       </article>
+
+      <article class="event-card reveal-item">
+        <a href={event5.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event5} alt="Stage con Maestro Ferdinando Balzarro - Kata Sochin" width={600} height={800} format="webp" loading="lazy" />
+        </a>
+      </article>
+
+      <article class="event-card reveal-item">
+        <a href={event6.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event6} alt="L'evoluzione del Kata Tekki" width={600} height={800} format="webp" loading="lazy" />
+        </a>
+      </article>
     </div>
   </div>
 </section>
@@ -94,7 +108,7 @@ import event4 from '../assets/Ivent 4.jpeg';
   .events-grid { 
     display: grid; 
     gap: 2rem; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   }
 
   .event-card a { display: block; cursor: zoom-in; }
