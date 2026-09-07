@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://ferdinandobalzarro.it',
@@ -6,5 +7,6 @@ export default defineConfig({
   build: {
     assets: 'assets'
   },
-  trailingSlash: 'always'
+  trailingSlash: 'always',
+  integrations: [sitemap()]
 });
