@@ -11,6 +11,34 @@ const {
   title = "Ferdinando Balzarro — Scrittura, pratica, visione",
   description = "Sito ufficiale di Ferdinando Balzarro. Karate, scrittura, presenza, ricerca interiore. Bologna."
 } = Astro.props;
+
+// Структуровані дані JSON-LD для агента та пошукових систем
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ferdinando Balzarro",
+  "url": "https://ferdinandobalzarro.it/",
+  "image": "https://ferdinandobalzarro.it/ferdinandobalzarro-hero.jpg",
+  "sameAs": [
+    "https://www.facebook.com/share/1DuhTeJWbM/"
+  ],
+  "jobTitle": "Scrittore e Maestro di Karate",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ferdinando Balzarro Portfolio"
+  },
+  "email": "balzarro.nando@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bologna",
+    "addressCountry": "IT"
+  },
+  "knowsAbout": [
+    "Letteratura",
+    "Karate",
+    "Filosofia"
+  ]
+};
 ---
 
 <!doctype html>
@@ -23,6 +51,9 @@ const {
     <meta name="description" content={description} />
     <link rel="canonical" href="https://ferdinandobalzarro.it/" />
     
+    <!-- Структуровані дані JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <!-- Оптимізоване завантаження шрифтів -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
