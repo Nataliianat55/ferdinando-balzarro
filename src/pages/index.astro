@@ -9,6 +9,20 @@ import Karate from '../components/Karate.astro';
 ---
 
 <Layout>
+  <!-- JSON-LD Structured Data для ідентифікації агентами та пошуковими системами -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ferdinando Balzarro",
+    "url": "https://ferdinandobalzarro.it",
+    "description": "Scrittore, autore e maestro di Karate tradizionale. Portfolio ufficiale e risorse per agenti digitali.",
+    "sameAs": [
+      "https://www.facebook.com/share/1DuhTeJWbM/"
+    ]
+  }
+  </script>
+
   <main class="page">
     <Hero />
     <FiloConduttore />
