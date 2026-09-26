@@ -92,17 +92,18 @@ import event8 from '../assets/Ivent 8.jpeg';
         </a>
       </article>
 
-      ‎<article class="event-card reveal-item">
-‎        <a href={event7.src} target="_blank" rel="noopener noreferrer">
-‎          <Image src={event7} alt="Stage con Maestro Ferdinando Balzarro - Kata Sochin" width={600} height={800} format="webp" loading="lazy" />
-‎        </a>
-‎      </article>
+      <article class="event-card reveal-item">
+        <a href={event7.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event7} alt="Stage con Maestro Ferdinando Balzarro - Kata Sochin" width={600} height={800} format="webp" loading="lazy" />
+        </a>
+      </article>
 
- <article class="event-card reveal-item">
+      <article class="event-card reveal-item">
         <a href={event8.src} target="_blank" rel="noopener noreferrer">
           <Image src={event8} alt="PIU' SU C'E' SOLO IL CIELO" width={600} height={800} format="webp" loading="lazy" />
         </a>
       </article>
+
     </div>
   </div>
 </section>
@@ -112,23 +113,45 @@ import event8 from '../assets/Ivent 8.jpeg';
   .events-section { padding: 80px 20px; background-color: #09090b; }
   .events-title { text-align: center; color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 3rem; }
   
-  /* Автоматична адаптивна сітка */
+  /* Структурована адаптивна сітка */
   .events-grid { 
     display: grid; 
     gap: 2rem; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: 1fr; /* На мобільних 1 колонка */
   }
 
-  .event-card a { display: block; cursor: zoom-in; }
+  .event-card a { 
+    display: block; 
+    cursor: zoom-in; 
+    height: 100%;
+  }
+
   .event-card img { 
     display: block;
     width: 100%; 
-    height: auto; 
+    height: 100%;
+    aspect-ratio: 3 / 4; /* Фіксує однакові пропорції для всіх карток */
+    object-fit: cover; /* Рівномірно заповнює простір без спотворень */
     border-radius: 12px; 
     border: 1px solid rgba(63, 63, 70, 0.5); 
     transition: transform 0.3s ease, opacity 0.3s ease; 
   }
+
   .event-card a:hover img { transform: scale(1.02); opacity: 0.8; }
+
+  /* Планшети */
+  @media (min-width: 640px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Комп'ютери - рівно по 3 колонки */
+  @media (min-width: 1024px) {
+    .events-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 
   /* Секція Karate */
   .karate-section { position: relative; padding: 100px 20px; background-color: #09090b; color: #e4e4e7; overflow: hidden; }
