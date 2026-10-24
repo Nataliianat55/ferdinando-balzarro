@@ -49,7 +49,7 @@ const jsonLd = {
     
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href="https://ferdinandobalzarro.it/" />
+    <link rel="canonical" href={`https://ferdinandobalzarro.it${Astro.url.pathname}`} />
     
     <!-- Структуровані дані JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
