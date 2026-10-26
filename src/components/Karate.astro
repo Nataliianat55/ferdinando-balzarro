@@ -11,7 +11,7 @@ import event8 from '../assets/Ivent 8.jpeg';
 import event9 from '../assets/Ivent 9.jpeg';
 import event10 from '../assets/Ivent 10.jpeg';
 import event11 from '../assets/Ivent-11.jpeg';
-import event12 from '../assets/Ivent-2.jpeg';
+import event1 from '../assets/Ivent-2.jpeg';
 ---
 
 <section class="section karate-section" aria-labelledby="karate-title">
@@ -66,7 +66,13 @@ import event12 from '../assets/Ivent-2.jpeg';
     
     <div class="events-grid">
 
-      <article class="event-card reveal-item">
+    <article class="event-card reveal-item">
+        <a href={event1.src} target="_blank" rel="noopener noreferrer">
+          <Image src={event1} alt="Stage con Maestro Ferdinando Balzarro - Kata Sochin" width={600} height={800} format="webp" loading="lazy" />
+        </a>
+      </article> 
+
+<article class="event-card reveal-item">
         <a href={event2.src} target="_blank" rel="noopener noreferrer">
           <Image src={event2} alt="PIU' SU C'E' SOLO IL CIELO" width={600} height={800} format="webp" loading="lazy" />
         </a>
@@ -92,7 +98,8 @@ import event12 from '../assets/Ivent-2.jpeg';
 
       <article class="event-card reveal-item">
         <a href={event6.src} target="_blank" rel="noopener noreferrer">
-          <Image src={event6} alt="L'evoluzione del Kata Tekki" width={600} height={800} format="webp" loading="lazy" />
+          <Image src={event6
+} alt="L'evoluzione del Kata Tekki" width={600} height={800} format="webp" loading="lazy" />
         </a>
       </article>
 
@@ -126,11 +133,6 @@ import event12 from '../assets/Ivent-2.jpeg';
         </a>
       </article>
 
-<article class="event-card reveal-item">
-        <a href={event9.src} target="_blank" rel="noopener noreferrer">
-          <Image src={event12} alt="Stage con Maestro Ferdinando Balzarro - Kata Sochin" width={600} height={800} format="webp" loading="lazy" />
-        </a>
-      </article>
     </div>
   </div>
 </section>
